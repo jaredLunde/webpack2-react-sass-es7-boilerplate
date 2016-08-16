@@ -91,6 +91,7 @@ module.exports = {
 
   plugins: [
     new webpack.DefinePlugin({'process.env': {NODE_ENV: '"development"'}}),
+    new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.CommonsChunkPlugin({names: ["client", "vendor"],
                                              filename: "vendor.dev.js"}),
