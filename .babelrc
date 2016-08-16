@@ -1,0 +1,16 @@
+{
+  "env": {
+    "production": {
+      "presets": ["es2016", ["es2015", {"modules": false}], "react", "stage-0"],
+      "plugins": ["transform-decorators-legacy"]
+    },
+    "development": {
+      "presets": ["es2016", ["es2015", {"modules": false}], "react", "stage-0"],
+      "plugins": ["react-hot-loader/babel", "transform-decorators-legacy"]
+    },
+    "cli": {
+      "presets": ["es2016", "es2015", "react", "stage-0"],
+      "plugins": ["transform-decorators-legacy"]
+    }
+  }
+}
