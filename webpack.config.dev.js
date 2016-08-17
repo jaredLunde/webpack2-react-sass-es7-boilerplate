@@ -32,7 +32,7 @@ var modernizrConfig = {
 }
 
 
-var getIp = deasync(function (cb) {publicIp.v4().then(ip => {cb(null, ip)})})
+var getIp = deasync(function (cb) {publicIp.v4().then(ip => cb(null, ip))})
 
 
 module.exports = {
