@@ -9,7 +9,7 @@
     "react-dom": "^15.3.0"
   },
   "devDependencies": {
-    "webpack2-es7-react-sass-boilerplate": "*"
+    "webpack2-react-sass-es7-boilerplate": "*"
   },
   "repository": {
     "type": "git",
