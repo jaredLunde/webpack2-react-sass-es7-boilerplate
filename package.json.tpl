@@ -21,7 +21,8 @@
     "build:es5": "cross-env NODE_ENV=cli babel ./lib --out-dir es5",
     "build:es6": "cross-env NODE_ENV=production babel ./lib --out-dir ./",
     "build:dist": "cross-env NODE_ENV=production webpack --config webpack.config.js",
-    "start:cli": "cross-env NODE_ENV=cli babel-node ./lib/index.js",
+    "start:cli": "npm run node ./lib/index.js",
+    "node": "cross-env NODE_ENV=cli babel-node",
     "prepublish": "npm run build"
   },
   "analyze": true,

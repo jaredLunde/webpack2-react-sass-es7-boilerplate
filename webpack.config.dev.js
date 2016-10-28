@@ -78,7 +78,7 @@ module.exports = {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style',
-          loader: 'css?group-css-media-queries!sass'
+          loader: 'css!group-css-media-queries!sass'
         })
       },
       {
