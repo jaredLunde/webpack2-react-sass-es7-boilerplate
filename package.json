@@ -1,6 +1,6 @@
 {
   "name": "webpack2-react-sass-es7-boilerplate",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "main": "index.js",
   "private": false,
   "dependencies": {
@@ -33,7 +33,7 @@
     "sass-loader": "^4.0.0",
     "strip-loader": "^0.1.2",
     "style-loader": "^0.13.1",
-    "webpack": "^2.1.0-beta.20",
+    "webpack": "^2.2.0-rc.0",
     "webpack-dashboard": "0.2.0",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^2.1.0-beta.0",

@@ -61,7 +61,7 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract({

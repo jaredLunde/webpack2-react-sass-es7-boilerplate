@@ -72,13 +72,18 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
+      {
+        test: /\.css$/,
+        loader: 'style!css'
+      },
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style',
-          loader: 'css!group-css-media-queries!sass'
-        })
+        loader: 'style!css!group-css-media-queries!sass'
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
+        loader: 'file'
       },
       {
         test: /\.js$/,
@@ -95,8 +100,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({names: ["client", "vendor"],
                                              filename: "vendor.dev.js"}),
     new DashboardPlugin(dashboard.setData),
-    new ModernizrPlugin(modernizrConfig),
-    new ExtractTextPlugin('{{PKG_NAME}}.dev.css')
+    new ModernizrPlugin(modernizrConfig)
   ],
 
   // Include mocks for when node.js specific modules may be required
