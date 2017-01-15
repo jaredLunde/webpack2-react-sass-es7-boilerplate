@@ -1,8 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
 var ModernizrPlugin = require('modernizr-webpack-plugin')
-var deasync = require('deasync')
-var publicIp = require('public-ip')
 var Dashboard = require('webpack-dashboard')
 var DashboardPlugin = require('webpack-dashboard/plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -32,16 +30,13 @@ var modernizrConfig = {
 }
 
 
-var getIp = deasync(function (cb) {publicIp.v4().then(ip => cb(null, ip))})
-
-
 module.exports = {
   // The base directory for resolving the entry option
   context: __dirname,
   devtool: 'eval',
 
   entry: {
-    app: ['webpack-dev-server/client?http://' + getIp() + ':3000',
+    app: ['webpack-dev-server/client?http://0.0.0.0:3000',
           'webpack/hot/only-dev-server',
           'react-hot-loader/patch',
           'index.hot'],
