@@ -1,15 +1,15 @@
 {
   "name": "{{PKG_NAME}}",
-  "version": "0.0.1-alpha",
+  "version": "0.1.0-alpha.0",
   "main": "index.js",
   "private": true,
   "dependencies": {
-    "react": "^15.3.0",
-    "react-addons-shallow-compare": "^15.3.0",
-    "react-dom": "^15.3.0"
+    "react": "^15.4.2",
+    "react-addons-shallow-compare": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "devDependencies": {
-    "webpack2-react-sass-es7-boilerplate": "^0.1.3"
+    "webpack2-react-sass-es7-boilerplate": "^0.1.7"
   },
   "repository": {
     "type": "git",
