@@ -71,7 +71,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loaders: ['babel-loader', stripLogger, stripLogger],
+        use: ['babel-loader', stripLogger, stripLogger],
         exclude: [/node_modules/]
       },
     ],

@@ -70,15 +70,23 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        loader: 'style!css'
+        use: [
+          'style',
+          'css'
+        ]
       },
       {
         test: /\.scss$/,
-        loader: 'style!css!group-css-media-queries!sass'
+        use: [
+          'style',
+          'css',
+          'group-css-media-queries',
+          'sass'
+        ]
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|ttf|eot)$/,
-        loader: 'file'
+        use: ['file']
       },
       {
         test: /\.js$/,
