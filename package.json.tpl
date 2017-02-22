@@ -9,7 +9,7 @@
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
-    "webpack2-react-sass-es7-boilerplate": "^0.1.9"
+    "webpack2-react-sass-es7-boilerplate": "^0.1.10"
   },
   "repository": {
     "type": "git",
@@ -21,6 +21,8 @@
     "build:es5": "cross-env NODE_ENV=cli babel ./lib --out-dir es5",
     "build:es6": "cross-env NODE_ENV=production babel ./lib --out-dir ./",
     "build:dist": "cross-env NODE_ENV=production webpack --config webpack.config.js",
+    "watch:es5": "cross-env NODE_ENV=cli babel ./lib -w --out-dir es5",
+    "watch:es6": "cross-env NODE_ENV=production babel ./lib -w --out-dir ./",
     "start:cli": "npm run node ./lib/index.js",
     "node": "cross-env NODE_ENV=cli babel-node",
     "prepublish": "npm run build"
