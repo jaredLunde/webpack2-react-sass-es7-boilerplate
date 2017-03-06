@@ -63,11 +63,24 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style',
+          use: [
+            'css?minifier',
+          ]
+        })
+      },
+      {
         test: /\.scss$/,
-        use: [ExtractTextPlugin.extract({
-          fallbackLoader: 'style',
-          loader: 'css?minifier!group-css-media-queries!sass'
-        })]
+        use: ExtractTextPlugin.extract({
+          fallback: 'style',
+          use: [
+            'css?minifier',
+            'group-css-media-queries',
+            'sass'
+          ]
+        })
       },
       {
         test: /\.js$/,

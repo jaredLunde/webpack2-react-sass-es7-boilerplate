@@ -1,6 +1,6 @@
 {
   "name": "webpack2-react-sass-es7-boilerplate",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "main": "index.js",
   "private": false,
   "dependencies": {
