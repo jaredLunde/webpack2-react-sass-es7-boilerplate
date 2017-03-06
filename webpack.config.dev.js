@@ -90,7 +90,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel',
+        use: ['babel'],
         exclude: [/node_modules/]
       },
     ],

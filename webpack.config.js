@@ -64,10 +64,10 @@ module.exports = {
     rules: [
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
+        use: [ExtractTextPlugin.extract({
           fallbackLoader: 'style',
           loader: 'css?minifier!group-css-media-queries!sass'
-        })
+        })]
       },
       {
         test: /\.js$/,
