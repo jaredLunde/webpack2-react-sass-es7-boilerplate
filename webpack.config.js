@@ -5,21 +5,21 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 
 var modernizrConfig = {
-  "filename": "modernizr.js",
-  'options': [
+  filename: 'modernizr.js',
+  options: [
     'setClasses',
     'html5printshiv'
   ],
-  'feature-detects': [
-    "inputtypes",
-    "network/connection",
-    "touchevents"
+  feature-detects: [
+    'inputtypes',
+    'network/connection',
+    'touchevents'
   ],
-  "minify" : {
-    "output": {
-      "comments": false,
-      "beautify": false,
-      "screw_ie8": true
+  minify: {
+    output: {
+      comments: false,
+      beautify: false,
+      screw_ie8: true
     }
   }
 }
@@ -42,20 +42,20 @@ module.exports = {
   // Various output options, to give us a single bundle.js file with everything resolved and concatenated
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: "{{PKG_NAME}}.js",
+    filename: '{{PKG_NAME}}.js',
     pathinfo: true
   },
 
   // Where to resolve our loaders
   resolveLoader: {
     modules: [path.join(__dirname, 'node_modules')],
-    moduleExtensions: ["-loader"],
+    moduleExtensions: ['-loader'],
   },
   resolve: {
     // Directories that contain our modules
-    modules: [path.resolve(__dirname, "lib"), "node_modules"],
-    descriptionFiles: ["package.json"],
-    moduleExtensions: ["-loader"],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    descriptionFiles: ['package.json'],
+    moduleExtensions: ['-loader'],
     // Extensions used to resolve modules
     extensions: ['.js', '.react.js', '.scss', '.css']
   },
@@ -93,8 +93,8 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({'process.env': {NODE_ENV: '"production"'}}),
     new ModernizrPlugin(modernizrConfig),
-    new webpack.optimize.CommonsChunkPlugin({name: "vendor",
-                                             filename: "vendor.js"}),
+    new webpack.optimize.CommonsChunkPlugin({name: 'vendor',
+                                             filename: 'vendor.js'}),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         pure_getters: true,

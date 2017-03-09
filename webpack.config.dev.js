@@ -7,24 +7,22 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 
 var dashboard = new Dashboard()
-
-
 var modernizrConfig = {
-  "filename": "modernizr.js",
-  'options': [
+  filename: 'modernizr.js',
+  options: [
     'setClasses',
     'html5printshiv'
   ],
-  'feature-detects': [
-    "inputtypes",
-    "network/connection",
-    "touchevents"
+  feature-detects: [
+    'inputtypes',
+    'network/connection',
+    'touchevents'
   ],
-  "minify" : {
-    "output": {
-      "comments": false,
-      "beautify": false,
-      "screw_ie8": true
+  minify: {
+    output: {
+      comments: false,
+      beautify: false,
+      screw_ie8: true
     }
   }
 }
@@ -48,20 +46,20 @@ module.exports = {
   output: {
     path: path.join(__dirname, '/dist'),
     publicPath: '/assets/',
-    filename: "{{PKG_NAME}}.dev.js",
+    filename: '{{PKG_NAME}}.dev.js',
     pathinfo: true
   },
 
   // Where to resolve our loaders
   resolveLoader: {
     modules: [path.join(__dirname, 'node_modules')],
-    moduleExtensions: ["-loader"],
+    moduleExtensions: ['-loader'],
   },
   resolve: {
     // Directories that contain our modules
-    modules: [path.resolve(__dirname, "lib"), "node_modules"],
-    descriptionFiles: ["package.json"],
-    moduleExtensions: ["-loader"],
+    modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+    descriptionFiles: ['package.json'],
+    moduleExtensions: ['-loader'],
     // Extensions used to resolve modules
     extensions: [ '.js', '.react.js', '.scss', '.css']
   },
@@ -103,8 +101,8 @@ module.exports = {
     new webpack.DefinePlugin({'process.env': {NODE_ENV: '"development"'}}),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({names: ["client", "vendor"],
-                                             filename: "vendor.dev.js"}),
+    new webpack.optimize.CommonsChunkPlugin({names: ['client', 'vendor'],
+                                             filename: 'vendor.dev.js'}),
     new DashboardPlugin(dashboard.setData),
     new ModernizrPlugin(modernizrConfig)
   ],
