@@ -1,19 +1,21 @@
 var path = require('path')
 var webpack = require('webpack')
-var ModernizrPlugin = require('modernizr-webpack-plugin')
+// var ModernizrPlugin = require('modernizr-webpack-plugin')
 var Dashboard = require('webpack-dashboard')
 var DashboardPlugin = require('webpack-dashboard/plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 
 var dashboard = new Dashboard()
+
+/**
 var modernizrConfig = {
   filename: 'modernizr.js',
   options: [
     'setClasses',
     'html5printshiv'
   ],
-  feature-detects: [
+  'feature-detects': [
     'inputtypes',
     'network/connection',
     'touchevents'
@@ -26,6 +28,7 @@ var modernizrConfig = {
     }
   }
 }
+*/
 
 
 module.exports = {
@@ -38,8 +41,7 @@ module.exports = {
           'webpack/hot/only-dev-server',
           'react-hot-loader/patch',
           'index.hot'],
-    vendor: ['react',
-             'react-dom']
+    vendor: ['react', 'react-dom']
   },
 
   // Various output options, to give us a single bundle.js file with everything resolved and concatenated
@@ -104,7 +106,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({names: ['client', 'vendor'],
                                              filename: 'vendor.dev.js'}),
     new DashboardPlugin(dashboard.setData),
-    new ModernizrPlugin(modernizrConfig)
+    // new ModernizrPlugin(modernizrConfig)
   ],
 
   // Include mocks for when node.js specific modules may be required

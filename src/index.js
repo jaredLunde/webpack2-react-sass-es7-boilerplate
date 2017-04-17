@@ -1,4 +1,4 @@
-// css imports
+// static imports
 require('../assets/css/{{PKG_NAME}}/core.scss')
 
 // javascript
