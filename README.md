@@ -30,7 +30,7 @@ npm start' > create-es-app
 
 2. Make sure you can execute the script
 ```sh
-chmod 0744 create-app
+chmod 0744 create-es-app
 ```
 
 3. Execute the script w/ a package name
