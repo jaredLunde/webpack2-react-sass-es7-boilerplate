@@ -27,3 +27,13 @@ find . -type f -name "*.bak" -and -not -path "*/node_modules/*" -exec rm {} \;;
 mv "./assets/css/{{PKG_NAME}}" "./assets/css/${PKG_NAME}"
 npm start' > create-es-app
 ```
+
+2. Make sure you can execute the script
+```sh
+chmod 0744 create-app
+```
+
+3. Execute the script w/ a package name
+```sh
+./create-es-app your-pkg-name
+```
