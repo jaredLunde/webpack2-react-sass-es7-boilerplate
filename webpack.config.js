@@ -44,8 +44,8 @@ module.exports = {
 
   // Various output options, to give us a single bundle.js file with everything resolved and concatenated
   output: {
-    path: path.join(__dirname, '/dist'),
-    filename: 'assets/{{PKG_NAME}}.js',
+    path: path.join(__dirname, '/dist/assets'),
+    filename: '{{PKG_NAME}}.js',
     pathinfo: true
   },
 
@@ -108,7 +108,7 @@ module.exports = {
     }),
     */
     new webpack.optimize.CommonsChunkPlugin({name: 'vendor',
-                                             filename: 'assets/vendor.js'}),
+                                             filename: 'vendor.js'}),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
         pure_getters: true,
@@ -124,10 +124,10 @@ module.exports = {
       minimize: true,
       debug: false
     }),
-    new ExtractTextPlugin('assets/{{PKG_NAME}}.css'),
+    new ExtractTextPlugin('{{PKG_NAME}}.css'),
     new HtmlWebpackPlugin({
       title: '{{PKG_NAME}}',
-      filename: 'index.html',
+      filename: '../index.html',
       template: 'index.ejs'
     })
   ],
