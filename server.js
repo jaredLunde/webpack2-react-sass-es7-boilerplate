@@ -9,6 +9,7 @@ console.log("NODE_ENV:", process.env.NODE_ENV)
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
   hot: true,
+  disableHostCheck: true,
   historyApiFallback: true,
   quiet: true,
   compress: true
